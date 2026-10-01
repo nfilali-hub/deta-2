@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Deta & Intrim | Uitzenden & Detacheren</title>
+
+<meta name="description" content="Deta & Intrim verbindt vakmensen en organisaties binnen techniek, industrie, productie en facilitair. Persoonlijk, snel en betrouwbaar.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --blue:#0a3154;
+    --blue-deep:#06243d;
+    --blue-soft:#143f62;
+    --orange:#f47a20;
+    --orange-dark:#dc6815;
+    --cream:#f4f0e8;
+    --cream-2:#ebe5da;
+    --white:#ffffff;
+    --text:#173247;
+    --muted:#6f7b84;
+    --line:rgba(10,49,84,.14);
+    --max:1240px;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:"Manrope",sans-serif;
+    color:var(--text);
+    background:#fff;
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+button{
+    font:inherit;
+}
+
+.container{
+    width:min(var(--max),calc(100% - 48px));
+    margin:auto;
+}
+
+.eyebrow{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:18px;
+    color:var(--orange);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.eyebrow:before{
+    content:"";
+    width:34px;
+    height:2px;
+    background:currentColor;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:11px;
+    min-height:52px;
+    padding:0 22px;
+    border-radius:4px;
+    font-size:14px;
+    font-weight:800;
+    transition:.25s ease;
+}
+
+.btn-orange{
+    background:var(--orange);
+    color:#fff;
+}
+
+.btn-orange:hover{
+    background:var(--orange-dark);
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.36);
+    color:#fff;
+}
+
+.btn-outline:hover{
+    background:#fff;
+    color:var(--blue);
+}
+
+.btn-blue{
+    background:var(--blue);
+    color:#fff;
+}
+
+.btn-blue:hover{
+    background:var(--blue-deep);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    z-index:20;
+    color:#fff;
+}
+
+.header-inner{
+    height:96px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid rgba(255,255,255,.17);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:23px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo-mark{
+    width:35px;
+    height:35px;
+    border:3px solid #fff;
+    border-right-color:var(--orange);
+    transform:rotate(45deg);
+    position:relative;
+}
+
+.logo-mark:after{
+    content:"";
+    position:absolute;
+    width:8px;
+    height:8px;
+    background:var(--orange);
+    right:-6px;
+    top:-6px;
+}
+
+.logo strong{
+    color:var(--orange);
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:31px;
+}
+
+nav a{
+    font-size:13px;
+    font-weight:700;
+    opacity:.88;
+    transition:.2s;
+}
+
+nav a:hover{
+    opacity:1;
+    color:#ffb174;
+}
+
+.header-cta{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.header-phone{
+    font-size:13px;
+    font-weight:700;
+}
+
+.header-button{
+    padding:13px 18px;
+    background:var(--orange);
+    color:#fff;
+    border-radius:4px;
+    font-size:13px;
+    font-weight:800;
+}
+
+.mobile-toggle{
+    display:none;
+    width:44px;
+    height:44px;
+    border:0;
+    background:transparent;
+    color:#fff;
+    cursor:pointer;
+    position:relative;
+}
+
+.mobile-toggle span{
+    position:absolute;
+    width:24px;
+    height:2px;
+    left:10px;
+    background:#fff;
+    transition:.2s ease;
+}
+
+.mobile-toggle span:first-child{
+    top:18px;
+}
+
+.mobile-toggle span:last-child{
+    top:26px;
+}
+
+.mobile-toggle.open span:first-child{
+    top:22px;
+    transform:rotate(45deg);
+}
+
+.mobile-toggle.open span:last-child{
+    top:22px;
+    transform:rotate(-45deg);
+}
+
+.mobile-menu{
+    display:none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:780px;
+    background:var(--blue);
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(90deg,var(--blue-deep) 0%,rgba(6,36,61,.94) 41%,rgba(6,36,61,.15) 72%),
+        url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1900&q=88")
+        center right / cover no-repeat;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    left:58%;
+    top:0;
+    bottom:0;
+    width:1px;
+    background:rgba(255,255,255,.15);
+    transform:skewX(-9deg);
+}
+
+.hero-inner{
+    min-height:780px;
+    display:grid;
+    grid-template-columns:1.12fr .88fr;
+    align-items:center;
+    position:relative;
+    z-index:2;
+    padding-top:80px;
+}
+
+.hero-copy{
+    max-width:720px;
+    padding-right:70px;
+}
+
+.hero .eyebrow{
+    color:#ffae6c;
+}
+
+.hero h1{
+    margin:0;
+    font-size:clamp(56px,6.4vw,92px);
+    line-height:.97;
+    letter-spacing:-.055em;
+    max-width:760px;
+}
+
+.hero h1 span{
+    color:var(--orange);
+}
+
+.hero p{
+    max-width:580px;
+    margin:28px 0 34px;
+    color:#d2dde5;
+    font-size:17px;
+    line-height:1.75;
+}
+
+.hero-actions{
+    display:flex;
+    gap:13px;
+    flex-wrap:wrap;
+}
+
+.hero-side{
+    align-self:end;
+    justify-self:end;
+    width:360px;
+    margin-bottom:70px;
+}
+
+.hero-note{
+    background:rgba(255,255,255,.95);
+    color:var(--text);
+    padding:27px 29px;
+    border-left:5px solid var(--orange);
+    box-shadow:0 22px 60px rgba(0,0,0,.2);
+}
+
+.hero-note-label{
+    color:var(--orange);
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+}
+
+.hero-note strong{
+    display:block;
+    margin:10px 0 8px;
+    font-size:23px;
+    color:var(--blue);
+    letter-spacing:-.03em;
+}
+
+.hero-note p{
+    margin:0;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   QUICK STRIP
+========================================================= */
+
+.quick-strip{
+    background:var(--orange);
+    color:#fff;
+}
+
+.quick-strip-inner{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:28px;
+}
+
+.quick-title{
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.13em;
+    opacity:.75;
+}
+
+.quick-items{
+    display:flex;
+    align-items:center;
+    gap:34px;
+    flex-wrap:wrap;
+}
+
+.quick-items span{
+    font-size:15px;
+    font-weight:800;
+}
+
+.quick-items i{
+    width:4px;
+    height:4px;
+    background:#fff;
+    border-radius:50%;
+    opacity:.45;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro{
+    padding:120px 0 110px;
+    background:#fff;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:.72fr 1.28fr;
+    gap:90px;
+}
+
+.intro-left{
+    padding-top:8px;
+}
+
+.intro-tag{
+    font-size:12px;
+    font-weight:800;
+    color:var(--orange);
+    text-transform:uppercase;
+    letter-spacing:.11em;
+}
+
+.intro-number{
+    margin-top:50px;
+    font-size:78px;
+    font-weight:800;
+    line-height:1;
+    color:var(--cream-2);
+    letter-spacing:-.07em;
+}
+
+.intro-content h2{
+    margin:0;
+    font-size:clamp(42px,4.8vw,69px);
+    line-height:1.07;
+    letter-spacing:-.05em;
+    color:var(--blue);
+}
+
+.intro-content h2 span{
+    color:var(--orange);
+}
+
+.intro-content p{
+    max-width:760px;
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.85;
+    margin:29px 0 0;
+}
+
+.intro-bottom{
+    margin-top:48px;
+    padding-top:32px;
+    border-top:1px solid var(--line);
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+}
+
+.intro-point strong{
+    display:block;
+    color:var(--blue);
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.intro-point span{
+    display:block;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.65;
+}
+
+
+/* =========================================================
+   SPECIALISMS
+========================================================= */
+
+.specialisms{
+    background:var(--cream);
+    padding:105px 0 115px;
+    overflow:hidden;
+}
+
+.specialism-heading{
+    display:flex;
+    justify-content:space-between;
+    gap:60px;
+    align-items:end;
+    margin-bottom:58px;
+}
+
+.specialism-heading h2{
+    margin:0;
+    font-size:clamp(44px,4.7vw,68px);
+    line-height:1;
+    letter-spacing:-.05em;
+    color:var(--blue);
+}
+
+.specialism-heading p{
+    max-width:470px;
+    margin:0;
+    color:var(--muted);
+    line-height:1.75;
+    font-size:15px;
+}
+
+.specialism-layout{
+    display:grid;
+    grid-template-columns:1fr 1.02fr;
+    min-height:570px;
+    background:#fff;
+    box-shadow:0 25px 60px rgba(10,49,84,.08);
+}
+
+.specialism-menu{
+    padding:44px 55px;
+}
+
+.specialism-item{
+    display:grid;
+    grid-template-columns:45px 1fr 30px;
+    align-items:center;
+    min-height:92px;
+    border-bottom:1px solid var(--line);
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.specialism-item:first-child{
+    border-top:1px solid var(--line);
+}
+
+.specialism-item .num{
+    color:var(--orange);
+    font-size:11px;
+    font-weight:800;
+}
+
+.specialism-item strong{
+    color:var(--blue);
+    font-size:29px;
+    letter-spacing:-.04em;
+    transition:.25s ease;
+}
+
+.specialism-item .arrow{
+    color:#9ba5ab;
+    font-size:20px;
+    transition:.25s ease;
+}
+
+.specialism-item:hover,
+.specialism-item.active{
+    padding-left:10px;
+}
+
+.specialism-item:hover strong,
+.specialism-item.active strong{
+    color:var(--orange);
+}
+
+.specialism-item:hover .arrow,
+.specialism-item.active .arrow{
+    color:var(--orange);
+    transform:translateX(4px);
+}
+
+.specialism-image{
+    position:relative;
+    min-height:570px;
+    background:
+        linear-gradient(0deg,rgba(6,36,61,.68),rgba(6,36,61,.02) 55%),
+        url("https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1500&q=86")
+        center / cover no-repeat;
+    transition:.35s ease;
+}
+
+.specialism-image-copy{
+    position:absolute;
+    left:43px;
+    right:43px;
+    bottom:38px;
+    color:#fff;
+}
+
+.specialism-image-copy span{
+    display:block;
+    color:#ffc69a;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.specialism-image-copy strong{
+    display:block;
+    font-size:29px;
+    max-width:420px;
+    line-height:1.2;
+    letter-spacing:-.035em;
+}
+
+
+/* =========================================================
+   TRUST / NUMBERS
+========================================================= */
+
+.trust{
+    background:var(--blue);
+    color:#fff;
+    padding:88px 0;
+}
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:1.4fr .6fr .6fr .6fr;
+    align-items:center;
+    gap:50px;
+}
+
+.trust-copy h2{
+    margin:0;
+    font-size:38px;
+    line-height:1.15;
+    letter-spacing:-.045em;
+}
+
+.trust-copy p{
+    margin:16px 0 0;
+    max-width:500px;
+    color:#bdccd7;
+    font-size:14px;
+    line-height:1.7;
+}
+
+.stat{
+    padding-left:28px;
+    border-left:1px solid rgba(255,255,255,.18);
+}
+
+.stat strong{
+    display:block;
+    color:var(--orange);
+    font-size:36px;
+    letter-spacing:-.05em;
+}
+
+.stat span{
+    display:block;
+    margin-top:5px;
+    color:#c8d4dc;
+    font-size:12px;
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   JOBS
+========================================================= */
+
+.jobs{
+    padding:115px 0;
+    background:#fff;
+}
+
+.jobs-head{
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:end;
+    gap:40px;
+    margin-bottom:46px;
+}
+
+.jobs-head h2{
+    margin:0;
+    color:var(--blue);
+    font-size:clamp(43px,4.5vw,64px);
+    line-height:1;
+    letter-spacing:-.05em;
+}
+
+.jobs-all{
+    color:var(--blue);
+    font-size:13px;
+    font-weight:800;
+    padding-bottom:5px;
+    border-bottom:2px solid var(--orange);
+}
+
+.job-list{
+    border-top:1px solid var(--line);
+}
+
+.job{
+    min-height:104px;
+    display:grid;
+    grid-template-columns:50px 1fr 170px 150px 40px;
+    align-items:center;
+    gap:20px;
+    border-bottom:1px solid var(--line);
+    transition:.2s ease;
+}
+
+.job:hover{
+    background:var(--cream);
+    padding:0 15px;
+}
+
+.job-index{
+    color:var(--orange);
+    font-size:11px;
+    font-weight:800;
+}
+
+.job-title{
+    color:var(--blue);
+    font-size:23px;
+    font-weight:700;
+    letter-spacing:-.035em;
+}
+
+.job-meta{
+    color:var(--muted);
+    font-size:12px;
+    font-weight:600;
+}
+
+.job-arrow{
+    color:var(--blue);
+    font-size:20px;
+    text-align:right;
+}
+
+
+/* =========================================================
+   EMPLOYER
+========================================================= */
+
+.employer{
+    background:var(--cream);
+    padding:110px 0;
+}
+
+.employer-grid{
+    display:grid;
+    grid-template-columns:1.02fr .98fr;
+    align-items:center;
+    gap:0;
+}
+
+.employer-image{
+    min-height:570px;
+    background:
+        linear-gradient(0deg,rgba(6,36,61,.2),rgba(6,36,61,.02)),
+        url("https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1500&q=86")
+        center / cover no-repeat;
+}
+
+.employer-copy{
+    background:#fff;
+    padding:72px 70px;
+    margin-left:-65px;
+    position:relative;
+    z-index:2;
+    box-shadow:0 25px 60px rgba(10,49,84,.09);
+}
+
+.employer-copy h2{
+    margin:0;
+    color:var(--blue);
+    font-size:clamp(41px,4.2vw,61px);
+    line-height:1.05;
+    letter-spacing:-.05em;
+}
+
+.employer-copy p{
+    margin:27px 0 30px;
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.82;
+}
+
+.employer-points{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px 22px;
+    margin-bottom:34px;
+}
+
+.employer-point{
+    display:flex;
+    gap:9px;
+    color:var(--blue);
+    font-size:13px;
+    font-weight:700;
+}
+
+.employer-point:before{
+    content:"✓";
+    color:var(--orange);
+    font-weight:800;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.final-cta{
+    background:var(--orange);
+    color:#fff;
+    padding:92px 0;
+}
+
+.final-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+.final-copy h2{
+    margin:0;
+    font-size:clamp(40px,4.4vw,63px);
+    line-height:1;
+    letter-spacing:-.05em;
+}
+
+.final-copy p{
+    margin:17px 0 0;
+    max-width:590px;
+    color:#ffe1cb;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.final-btn{
+    flex-shrink:0;
+    min-width:190px;
+    min-height:56px;
+    background:#fff;
+    color:var(--blue);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:0 24px;
+    font-weight:800;
+    font-size:14px;
+    border-radius:4px;
+    transition:.2s ease;
+}
+
+.final-btn:hover{
+    transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:var(--blue-deep);
+    color:#b5c3cd;
+    padding:75px 0 28px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.3fr .7fr .7fr .7fr;
+    gap:55px;
+    padding-bottom:58px;
+}
+
+.footer-brand .logo{
+    color:#fff;
+    margin-bottom:18px;
+}
+
+.footer-brand p{
+    max-width:360px;
+    margin:0;
+    font-size:13px;
+    line-height:1.75;
+}
+
+.footer-title{
+    color:#fff;
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    margin-bottom:18px;
+}
+
+.footer-col{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    font-size:13px;
+}
+
+.footer-col a:hover{
+    color:#fff;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:24px;
+    display:flex;
+    justify-content:space-between;
+    gap:25px;
+    font-size:11px;
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(24px);
+    transition:.65s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1020px){
+
+    nav,
+    .header-phone{
+        display:none;
+    }
+
+    .mobile-toggle{
+        display:block;
+    }
+
+    .header-button{
+        display:none;
+    }
+
+    .mobile-menu{
+        position:fixed;
+        display:flex;
+        z-index:18;
+        inset:0;
+        background:var(--blue-deep);
+        padding:120px 30px 40px;
+        flex-direction:column;
+        opacity:0;
+        visibility:hidden;
+        transition:.25s ease;
+    }
+
+    .mobile-menu.open{
+        opacity:1;
+        visibility:visible;
+    }
+
+    .mobile-menu a{
+        color:#fff;
+        font-size:34px;
+        font-weight:700;
+        letter-spacing:-.04em;
+        padding:13px 0;
+        border-bottom:1px solid rgba(255,255,255,.12);
+    }
+
+    .hero-inner{
+        grid-template-columns:1fr;
+    }
+
+    .hero-copy{
+        padding-right:0;
+        max-width:700px;
+    }
+
+    .hero-side{
+        justify-self:start;
+        width:min(440px,100%);
+        margin-bottom:55px;
+    }
+
+    .intro-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .intro-number{
+        display:none;
+    }
+
+    .specialism-layout{
+        grid-template-columns:1fr;
+    }
+
+    .specialism-image{
+        min-height:430px;
+    }
+
+    .trust-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .trust-copy{
+        grid-column:1/-1;
+    }
+
+    .employer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .employer-copy{
+        margin:-80px 40px 0;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    .container{
+        width:calc(100% - 30px);
+    }
+
+    .header-inner{
+        height:78px;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .logo-mark{
+        width:28px;
+        height:28px;
+    }
+
+    .hero{
+        min-height:auto;
+    }
+
+    .hero:before{
+        background:
+            linear-gradient(0deg,rgba(6,36,61,.96) 0%,rgba(6,36,61,.84) 60%,rgba(6,36,61,.45) 100%),
+            url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1100&q=85")
+            center / cover no-repeat;
+    }
+
+    .hero:after{
+        display:none;
+    }
+
+    .hero-inner{
+        min-height:auto;
+        padding:135px 0 55px;
+    }
+
+    .hero h1{
+        font-size:49px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .hero-side{
+        margin-top:50px;
+        margin-bottom:0;
+    }
+
+    .hero-note{
+        padding:22px;
+    }
+
+    .quick-strip-inner{
+        padding:22px 0;
+        display:block;
+    }
+
+    .quick-title{
+        margin-bottom:14px;
+    }
+
+    .quick-items{
+        gap:11px 15px;
+    }
+
+    .quick-items span{
+        font-size:13px;
+    }
+
+    .quick-items i{
+        display:none;
+    }
+
+    .intro{
+        padding:80px 0;
+    }
+
+    .intro-content h2{
+        font-size:40px;
+    }
+
+    .intro-bottom{
+        grid-template-columns:1fr;
+        gap:22px;
+    }
+
+    .specialisms{
+        padding:80px 0;
+    }
+
+    .specialism-heading{
+        display:block;
+    }
+
+    .specialism-heading h2{
+        font-size:44px;
+        margin-bottom:20px;
+    }
+
+    .specialism-menu{
+        padding:25px;
+    }
+
+    .specialism-item{
+        min-height:75px;
+        grid-template-columns:35px 1fr 25px;
+    }
+
+    .specialism-item strong{
+        font-size:23px;
+    }
+
+    .specialism-image{
+        min-height:350px;
+    }
+
+    .specialism-image-copy{
+        left:25px;
+        right:25px;
+        bottom:25px;
+    }
+
+    .specialism-image-copy strong{
+        font-size:24px;
+    }
+
+    .trust{
+        padding:70px 0;
+    }
+
+    .trust-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stat{
+        border-left:0;
+        padding-left:0;
+        border-top:1px solid rgba(255,255,255,.15);
+        padding-top:25px;
+    }
+
+    .jobs{
+        padding:80px 0;
+    }
+
+    .jobs-head{
+        display:block;
+    }
+
+    .jobs-all{
+        display:inline-block;
+        margin-top:18px;
+    }
+
+    .job{
+        min-height:92px;
+        grid-template-columns:32px 1fr 28px;
+        gap:10px;
+    }
+
+    .job-meta{
+        display:none;
+    }
+
+    .job-title{
+        font-size:20px;
+    }
+
+    .employer{
+        padding:80px 0;
+    }
+
+    .employer-image{
+        min-height:350px;
+    }
+
+    .employer-copy{
+        margin:-35px 15px 0;
+        padding:38px 28px;
+    }
+
+    .employer-copy h2{
+        font-size:40px;
+    }
+
+    .employer-points{
+        grid-template-columns:1fr;
+    }
+
+    .final-cta{
+        padding:70px 0;
+    }
+
+    .final-inner{
+        display:block;
+    }
+
+    .final-btn{
+        margin-top:28px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<header>
+    <div class="container header-inner">
+
+        <a href="#" class="logo">
+            <span class="logo-mark"></span>
+            Deta &amp; <strong>Intrim</strong>
+        </a>
+
+        <nav>
+            <a href="#over">Over ons</a>
+            <a href="#specialismen">Specialismen</a>
+            <a href="#vacatures">Vacatures</a>
+            <a href="https://detaintrim.nl/ik-zoek-personeel/">Werkgevers</a>
+        </nav>
+
+        <div class="header-cta">
+
+            <a class="header-phone" href="tel:0333033299">
+                033 - 30 33 299
+            </a>
+
+            <a class="header-button" href="https://detaintrim.nl/contact/">
+                Contact
+            </a>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </div>
+</header>
+
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="#over">Over ons</a>
+    <a href="#specialismen">Specialismen</a>
+    <a href="#vacatures">Vacatures</a>
+    <a href="https://detaintrim.nl/ik-zoek-personeel/">Werkgevers</a>
+    <a href="https://detaintrim.nl/contact/">Contact</a>
+
+</div>
+
+
+<main>
+
+
+<section class="hero">
+
+    <div class="container hero-inner">
+
+        <div class="hero-copy">
+
+            <div class="eyebrow">
+                Uitzenden &amp; detacheren
+            </div>
+
+            <h1>
+                Mensen die passen.
+                <span>Werk dat klopt.</span>
+            </h1>
+
+            <p>
+                Deta &amp; Intrim verbindt vakmensen met organisaties
+                binnen techniek, industrie, productie en facilitair.
+                Niet alleen op basis van een cv, maar op ervaring,
+                mentaliteit en de plek waar iemand terechtkomt.
+            </p>
+
+            <div class="hero-actions">
+
+                <a class="btn btn-orange" href="https://detaintrim.nl/ik-zoek-personeel/">
+                    Ik zoek personeel →
+                </a>
+
+                <a class="btn btn-outline" href="https://detaintrim.nl/vacature/">
+                    Bekijk vacatures
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-side">
+
+            <div class="hero-note">
+
+                <span class="hero-note-label">
+                    Voor werkgevers
+                </span>
+
+                <strong>
+                    Snel iemand nodig?
+                </strong>
+
+                <p>
+                    Vertel ons wat je zoekt. Wij schakelen persoonlijk
+                    en gericht met geschikte kandidaten.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="quick-strip">
+
+    <div class="container quick-strip-inner">
+
+        <div class="quick-title">
+            Onze werkvelden
+        </div>
+
+        <div class="quick-items">
+            <span>Techniek</span>
+            <i></i>
+            <span>Industrie</span>
+            <i></i>
+            <span>Productie</span>
+            <i></i>
+            <span>Installatie</span>
+            <i></i>
+            <span>Facilitair</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="intro" id="over">
+
+    <div class="container intro-grid reveal">
+
+        <div class="intro-left">
+
+            <div class="intro-tag">
+                Over Deta &amp; Intrim
+            </div>
+
+            <div class="intro-number">
+                D&amp;I
+            </div>
+
+        </div>
+
+
+        <div class="intro-content">
+
+            <h2>
+                Een goede match gaat verder dan
+                <span>ervaring op papier.</span>
+            </h2>
+
+            <p>
+                We kijken naar wat iemand kan, maar ook naar hoe iemand
+                werkt. Naar tempo, betrouwbaarheid, mentaliteit en de
+                mensen op de werkvloer. Zo ontstaat een samenwerking
+                die niet alleen snel geregeld is, maar ook echt past.
+            </p>
+
+
+            <div class="intro-bottom">
+
+                <div class="intro-point">
+                    <strong>Persoonlijke selectie</strong>
+                    <span>
+                        Gericht zoeken in plaats van cv's doorschuiven.
+                    </span>
+                </div>
+
+                <div class="intro-point">
+                    <strong>Korte lijnen</strong>
+                    <span>
+                        Direct contact en snel kunnen schakelen.
+                    </span>
+                </div>
+
+                <div class="intro-point">
+                    <strong>Betrokken blijven</strong>
+                    <span>
+                        Ook na de plaatsing blijven we aanspreekbaar.
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="specialisms" id="specialismen">
+
+    <div class="container">
+
+        <div class="specialism-heading reveal">
+
+            <h2>
+                Waar wij dagelijks<br>
+                mensen plaatsen.
+            </h2>
+
+            <p>
+                Van operators en productiemedewerkers tot technische
+                vakmensen en facilitair personeel. We kennen het werk
+                én weten welk type medewerker daarbij past.
+            </p>
+
+        </div>
+
+
+        <div class="specialism-layout reveal">
+
+            <div class="specialism-menu">
+
+                <div
+                    class="specialism-item active"
+                    data-image="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1500&q=86"
+                    data-label="Techniek"
+                    data-copy="Vakmensen voor montage, onderhoud en technische projecten."
+                >
+                    <span class="num">01</span>
+                    <strong>Techniek</strong>
+                    <span class="arrow">→</span>
+                </div>
+
+                <div
+                    class="specialism-item"
+                    data-image="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1500&q=86"
+                    data-label="Industrie"
+                    data-copy="Operators en medewerkers voor productie- en procesomgevingen."
+                >
+                    <span class="num">02</span>
+                    <strong>Industrie</strong>
+                    <span class="arrow">→</span>
+                </div>
+
+                <div
+                    class="specialism-item"
+                    data-image="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1500&q=86"
+                    data-label="Productie"
+                    data-copy="Betrouwbare mensen voor productie, assemblage en logistieke processen."
+                >
+                    <span class="num">03</span>
+                    <strong>Productie</strong>
+                    <span class="arrow">→</span>
+                </div>
+
+                <div
+                    class="specialism-item"
+                    data-image="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1500&q=86"
+                    data-label="Installatie"
+                    data-copy="Ondersteuning bij montage, installatie en technisch onderhoud."
+                >
+                    <span class="num">04</span>
+                    <strong>Installatie</strong>
+                    <span class="arrow">→</span>
+                </div>
+
+                <div
+                    class="specialism-item"
+                    data-image="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1500&q=86"
+                    data-label="Facilitair"
+                    data-copy="Personeel voor ondersteuning, schoonmaak en facilitaire werkzaamheden."
+                >
+                    <span class="num">05</span>
+                    <strong>Facilitair</strong>
+                    <span class="arrow">→</span>
+                </div>
+
+            </div>
+
+
+            <div class="specialism-image" id="specialismImage">
+
+                <div class="specialism-image-copy">
+
+                    <span id="specialismLabel">
+                        Techniek
+                    </span>
+
+                    <strong id="specialismCopy">
+                        Vakmensen voor montage, onderhoud en technische projecten.
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="trust">
+
+    <div class="container trust-grid reveal">
+
+        <div class="trust-copy">
+
+            <h2>
+                Zakelijk waar het moet.<br>
+                Persoonlijk waar het telt.
+            </h2>
+
+            <p>
+                Geen onnodige lagen of lange procedures.
+                Duidelijk contact met werkgevers en medewerkers,
+                vanaf de eerste kennismaking tot na de plaatsing.
+            </p>
+
+        </div>
+
+        <div class="stat">
+            <strong>01</strong>
+            <span>
+                Persoonlijk aanspreekpunt
+            </span>
+        </div>
+
+        <div class="stat">
+            <strong>02</strong>
+            <span>
+                Gericht geselecteerde kandidaten
+            </span>
+        </div>
+
+        <div class="stat">
+            <strong>03</strong>
+            <span>
+                Snel schakelen wanneer nodig
+            </span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="jobs" id="vacatures">
+
+    <div class="container">
+
+        <div class="jobs-head reveal">
+
+            <div>
+
+                <div class="eyebrow">
+                    Actuele mogelijkheden
+                </div>
+
+                <h2>
+                    Vacatures
+                </h2>
+
+            </div>
+
+            <a class="jobs-all" href="https://detaintrim.nl/vacature/">
+                Alle vacatures →
+            </a>
+
+        </div>
+
+
+        <div class="job-list reveal">
+
+            <a class="job" href="https://detaintrim.nl/vacature/">
+                <span class="job-index">01</span>
+                <span class="job-title">Procesoperator</span>
+                <span class="job-meta">Randstad</span>
+                <span class="job-meta">Fulltime</span>
+                <span class="job-arrow">→</span>
+            </a>
+
+            <a class="job" href="https://detaintrim.nl/vacature/">
+                <span class="job-index">02</span>
+                <span class="job-title">Productiemedewerker</span>
+                <span class="job-meta">Randstad</span>
+                <span class="job-meta">Fulltime</span>
+                <span class="job-arrow">→</span>
+            </a>
+
+            <a class="job" href="https://detaintrim.nl/vacature/">
+                <span class="job-index">03</span>
+                <span class="job-title">Montagemedewerker</span>
+                <span class="job-meta">Midden-Nederland</span>
+                <span class="job-meta">Fulltime</span>
+                <span class="job-arrow">→</span>
+            </a>
+
+            <a class="job" href="https://detaintrim.nl/vacature/">
+                <span class="job-index">04</span>
+                <span class="job-title">Technisch medewerker</span>
+                <span class="job-meta">Midden-Nederland</span>
+                <span class="job-meta">Project</span>
+                <span class="job-arrow">→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="employer">
+
+    <div class="container employer-grid reveal">
+
+        <div class="employer-image"></div>
+
+
+        <div class="employer-copy">
+
+            <div class="eyebrow">
+                Voor werkgevers
+            </div>
+
+            <h2>
+                Personeel nodig zonder eindeloos zoeken?
+            </h2>
+
+            <p>
+                Vertel ons wat de functie vraagt en binnen welke
+                omgeving iemand terechtkomt. Wij zoeken gericht,
+                spreken kandidaten persoonlijk en stellen alleen
+                mensen voor waarvan wij denken dat het daadwerkelijk past.
+            </p>
+
+
+            <div class="employer-points">
+
+                <div class="employer-point">
+                    Persoonlijke intake
+                </div>
+
+                <div class="employer-point">
+                    Snelle terugkoppeling
+                </div>
+
+                <div class="employer-point">
+                    Selectie op teamfit
+                </div>
+
+                <div class="employer-point">
+                    Eén vast aanspreekpunt
+                </div>
+
+            </div>
+
+
+            <a class="btn btn-blue" href="https://detaintrim.nl/ik-zoek-personeel/">
+                Bespreek uw vacature →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="final-cta">
+
+    <div class="container final-inner">
+
+        <div class="final-copy">
+
+            <h2>
+                Klaar voor de juiste match?
+            </h2>
+
+            <p>
+                Of je nu personeel zoekt of zelf een volgende stap wilt zetten:
+                neem contact op en we kijken samen naar de mogelijkheden.
+            </p>
+
+        </div>
+
+        <a class="final-btn" href="https://detaintrim.nl/contact/">
+            Neem contact op →
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+                    <span class="logo-mark"></span>
+                    Deta &amp; <strong>Intrim</strong>
+                </div>
+
+                <p>
+                    Persoonlijke arbeidsbemiddeling voor vakmensen
+                    en organisaties binnen techniek, industrie,
+                    productie en facilitair.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Navigatie
+                </div>
+
+                <div class="footer-col">
+                    <a href="#over">Over ons</a>
+                    <a href="#specialismen">Specialismen</a>
+                    <a href="#vacatures">Vacatures</a>
+                    <a href="https://detaintrim.nl/contact/">Contact</a>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Contact
+                </div>
+
+                <div class="footer-col">
+                    <a href="tel:0333033299">033 - 30 33 299</a>
+                    <a href="mailto:info@detaintrim.nl">info@detaintrim.nl</a>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Adres
+                </div>
+
+                <div class="footer-col">
+                    <span>Maanlander 37</span>
+                    <span>3824 MN Amersfoort</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Deta &amp; Intrim
+            </span>
+
+            <span>
+                Uitzenden · Detacheren · Bemiddelen
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* mobile menu */
+
+const toggle = document.getElementById("mobileToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+
+toggle.addEventListener("click", function(){
+
+    toggle.classList.toggle("open");
+    mobileMenu.classList.toggle("open");
+
+});
+
+mobileMenu.querySelectorAll("a").forEach(function(link){
+
+    link.addEventListener("click", function(){
+
+        toggle.classList.remove("open");
+        mobileMenu.classList.remove("open");
+
+    });
+
+});
+
+
+/* specialism switch */
+
+const items = document.querySelectorAll(".specialism-item");
+const image = document.getElementById("specialismImage");
+const label = document.getElementById("specialismLabel");
+const copy = document.getElementById("specialismCopy");
+
+items.forEach(function(item){
+
+    item.addEventListener("mouseenter", function(){
+
+        items.forEach(function(i){
+            i.classList.remove("active");
+        });
+
+        item.classList.add("active");
+
+        image.style.opacity = ".7";
+
+        setTimeout(function(){
+
+            image.style.backgroundImage =
+                "linear-gradient(0deg,rgba(6,36,61,.68),rgba(6,36,61,.02) 55%), url('" +
+                item.dataset.image +
+                "')";
+
+            label.textContent = item.dataset.label;
+            copy.textContent = item.dataset.copy;
+
+            image.style.opacity = "1";
+
+        },130);
+
+    });
+
+});
+
+
+/* reveal animation */
+
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(function(entries){
+
+    entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+},{
+    threshold:.12
+});
+
+reveals.forEach(function(el){
+    observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
